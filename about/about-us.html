@@ -1,0 +1,622 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - DeFreitas Ventures Inc.</title>
+    <meta name="description"
+        content="Learn about DeFreitas Ventures Inc. - a multi-industry family enterprise built on legacy and driven by innovation, creating sustainable value across sectors.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "DeFreitas Ventures Inc.",
+        "description": "Multi-industry family enterprise focused on agriculture, mining, tourism, and consulting",
+        "foundingDate": "1990",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "GY"
+        },
+        "sameAs": [
+            "https://www.facebook.com/share/1CPjsgueZe/?mibextid=wwXIfr"
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">DeFreitas Ventures</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="#" class="nav-link active">About</a>
+                <!-- <a href="#services" class="nav-link">Services</a> -->
+                <a href="../contact/contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-video">
+            <video autoplay muted loop playsinline id="heroBgVideo">
+                <source src="../images/hero-video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <nav class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">About</span>
+            </nav>
+            <h1 class="hero-title">Built on Legacy.<br>Driven by Innovation.</h1>
+            <p class="hero-subtitle">DeFreitas Ventures Inc. is a multi-industry family enterprise shaping a
+                sustainable, prosperous future.</p>
+            <a href="#services" class="hero-cta">
+                <span>Explore Our Work</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+    <style>
+        .hero-subtitle {
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+            background: linear-gradient(90deg, #FF6A00, #FFCC00);
+            /* Orange → Gold */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            animation: shine 3s ease-in-out infinite;
+            text-shadow: 2px 3px 10px black;
+        }
+
+        /* Optional shimmer animation */
+        @keyframes shine {
+            0% {
+                background-position: -200%;
+            }
+
+            50% {
+                background-position: 200%;
+            }
+
+            100% {
+                background-position: -200%;
+            }
+        }
+    </style>
+    <!-- Our Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-content" style="overflow-x:hidden;">
+                <div class="story-image" id="storyImageContainer" style="overflow:hidden;">
+                    <img src="story-image.png" alt="DeFreitas family legacy" loading="lazy" id="storyImage"
+                        style="border-radius:20px;box-shadow:0 8px 32px rgba(33,147,176,0.18);">
+                </div>
+                <div class="story-text">
+                    <h2>Our Story</h2>
+                    <div class="story-timeline" id="storyTimeline">
+                        <p class="story-intro tlt" id="storyIntro">
+                            DeFreitas Ventures Inc. is a bold, forward-thinking enterprise with deep roots and a wide
+                            reach—spanning agriculture, gold mining, construction, hospitality, tourism, and the
+                            procurement and sale of specialized equipment and machinery.
+                        </p>
+                        <p class="story-detail" id="storyDetail">
+                            What began in the 1990s as a small family agricultural business has grown into a dynamic,
+                            multi-industry company serving diverse communities across continents. From these humble
+                            beginnings, DeFreitas Ventures has expanded thoughtfully, guided by values of integrity,
+                            hard work, and community commitment.
+                        </p>
+                        <p class="story-paragraph">
+                            In addition to our core ventures, we offer expert consultancy services in business
+                            development, land acquisition, mining, agriculture, tourism, and logistics — supporting
+                            clients with tailored strategies that drive meaningful growth.
+                        </p>
+                        <p class="story-paragraph">
+                            Our mission is simple yet powerful: to transform visionary ideas into impactful, lasting
+                            realities — with creativity, care, and unmatched attention to detail. At DeFreitas Ventures,
+                            we don’t just build businesses; we build trust, long-term partnerships, and sustainable,
+                            scalable solutions.
+                        </p>
+                        <p class="story-paragraph">
+                            As a family-led organization, we understand the power of legacy. Every project we undertake
+                            is rooted in timeless principles and modern innovation — designed not just for today, but
+                            for generations to come.
+                        </p>
+                        <p class="story-paragraph">
+                            Today, DeFreitas Ventures Inc. stands at the intersection of vision and action — where
+                            legacy begins, and family remains at the core of everything we do.
+                        </p>
+                    </div>
+
+                    <a href="../index.html" class="story-cta">
+                        <span>See Our Projects</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission, Vision & Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="values-grid">
+                <div class="value-card mission">
+                    <div class="value-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To create long-term value across sectors through innovation, sustainability, and community-rooted
+                        operations.</p>
+                </div>
+
+                <div class="value-card vision">
+                    <div class="value-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To be a global leader in responsible enterprise, enriching the future through purposeful
+                        ventures.</p>
+                </div>
+
+                <div class="value-card values" style="cursor:pointer;">
+                    <div class="value-icon" id="emailIcon" style="transition:transform 0.4s;">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Address</h3>
+                    <ul class="values-list">
+                        <li>
+                            <a href="mailto:ecoadventures@dvcorp.org" class="emailLink"
+                                style="color:#D4AF37;font-weight:600;text-decoration:none;transition:color 0.3s;">
+                                ecoadventures@dvcorp.org
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:salesales@dvcorp.org" class="emailLink"
+                                style="color:#D4AF37;font-weight:600;text-decoration:none;transition:color 0.3s;">
+                                sales@dvcorp.org
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:solar@dvcorp.org" class="emailLink"
+                                style="color:#D4AF37;font-weight:600;text-decoration:none;transition:color 0.3s;">
+                                solar@dvcorp.org
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:support@dvcorp.org" class="emailLink"
+                                style="color:#D4AF37;font-weight:600;text-decoration:none;transition:color 0.3s;">
+                                support@dvcorp.org
+                            </a>
+                        </li>
+                    </ul>
+                </div>'
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="leadership-section">
+        <div class="container">
+            <div class="leadership-content">
+                <div class="leadership-quote">
+                    <blockquote>
+                        "We don't just build businesses — we build futures. Every venture reflects our name, our pride,
+                        and our commitment to excellence."
+                    </blockquote>
+                    <cite>— Founder, DeFreitas Family</cite>
+                </div>
+                <div class="leadership-text">
+                    <h2>Leadership & Family Ethos</h2>
+                    <p>At the heart of DeFreitas Ventures is a family legacy built on trust, determination, and an
+                        unwavering commitment to excellence. Our leadership approach combines traditional values with
+                        modern innovation, ensuring that every decision reflects our deep responsibility to stakeholders
+                        and communities.</p>
+
+                    <p>We believe in leading by example, fostering relationships that span generations, and maintaining
+                        the personal touch that has defined our success for over three decades.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section" id="timelineSection">
+        <div class="container">
+            <h2 class="timeline-title">Timeline of Growth</h2>
+            <div class="timeline" id="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">1990s</div>
+                        <h3>Agricultural Foundations</h3>
+                        <p>Founded as a family agricultural business, establishing our commitment to sustainable land
+                            use and community development.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2000s</div>
+                        <h3>Mining & Infrastructure</h3>
+                        <p>Expanded into gold mining and infrastructure development, bringing expertise in resource
+                            management and sustainable extraction.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2010s</div>
+                        <h3>Tourism & Hospitality</h3>
+                        <p>Launched our tourism and hospitality division, showcasing the natural beauty and cultural
+                            richness of our region.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2020s</div>
+                        <h3>Global Expansion</h3>
+                        <p>Expanded consulting services and international operations, bringing our expertise to global
+                            markets while maintaining local roots.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why We're Different Section -->
+    <section class="differentiators-section">
+        <div class="container">
+            <h2>Why We're Different</h2>
+            <div class="differentiators-grid">
+                <div class="differentiator-card">
+                    <div class="differentiator-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Decades of Expertise</h3>
+                    <p>Cross-sector experience spanning over 30 years</p>
+                </div>
+
+                <div class="differentiator-card">
+                    <div class="differentiator-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainability Focus</h3>
+                    <p>Environmental responsibility at our core</p>
+                </div>
+
+                <div class="differentiator-card">
+                    <div class="differentiator-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Open Communication</h3>
+                    <p>Client-first approach with transparent processes</p>
+                </div>
+
+                <div class="differentiator-card">
+                    <div class="differentiator-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Comprehensive Solutions</h3>
+                    <p>From land to logistics — we deliver end-to-end</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content animate-footer">
+                <div class="footer-brand animate-footer">
+                    <h3 class="animate-footer">DeFreitas Ventures Inc.</h3>
+                    <p class="animate-footer">Building futures through purposeful enterprise</p>
+                </div>
+                <div class="footer-links animate-footer">
+                    <div class="footer-section animate-footer">
+                        <h4 class="animate-footer">Navigation</h4>
+                        <ul>
+                            <li><a href="#home" class="animate-footer">Home</a></li>
+                            <li><a href="#about" class="animate-footer">About</a></li>
+                            <li><a href="../index.html" class="animate-footer">Project Portfolio</a></li>
+                            <li><a href="#contact" class="animate-footer">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-section animate-footer">
+                        <h4 class="animate-footer">Connect</h4>
+                        <div class="footer-social animate-footer" style="display:flex;gap:10px;">
+                            <a href="https://www.linkedin.com/in/randy-defreitas-b37568345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="animate-footer"><i
+                                    class="fab fa-linkedin"></i></a>
+
+                                    <a href="https://www.linkedin.com/in/randy-defreitas-b37568345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" class="animate-footer"><i
+                                    class="fab fa-linkedin"></i></a>
+
+                            <a href="mailto:sales@dvcorp.org" class="animate-footer"><i class="fas fa-envelope"></i></a>
+                            <a href="https://www.facebook.com/share/1CPjsgueZe/?mibextid=wwXIfr" target="_blank"
+                                class="animate-footer"><i class="fab fa-facebook"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom animate-footer">
+                <p class="animate-footer">&copy; 2025 DeFreitas Ventures Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float" >
+        <a  style="background: #FF6A00;" href="https://www.instagram.com/landrovingadventure?igsh=MXUwNHF4dW12N3Jkdw%3D%3D&utm_source=qr" target="_blank">
+            <i class="fab fa-instagram" ></i>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <!-- Libraries for Textillate.js -->
+     <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Lettering.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+
+<!-- Textillate.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+    <script>
+        // Animate icon on hover and click
+        document.addEventListener('DOMContentLoaded', function () {
+            var emailCard = document.querySelector('.value-card.values');
+            var emailIcon = document.getElementById('emailIcon');
+            var emailLinks = document.querySelectorAll('.emailLink');
+
+            emailCard.addEventListener('mouseenter', function () {
+                emailIcon.style.transform = 'scale(1.2) rotate(-10deg)';
+                emailLinks.forEach(function (link) {
+                    link.style.color = '#2193b0';
+                });
+            });
+            emailCard.addEventListener('mouseleave', function () {
+                emailIcon.style.transform = 'scale(1) rotate(0deg)';
+                emailLinks.forEach(function (link) {
+                    link.style.color = '#D4AF37';
+                });
+            });
+            emailCard.addEventListener('click', function (e) {
+                // Only trigger mailto if not clicking a link directly
+                if (!e.target.classList.contains('emailLink')) {
+                    window.location.href = 'mailto:ecoadventures@dvcorp.org';
+                }
+            });
+
+            // GSAP bounce animation on load for icon and links
+            if (window.gsap) {
+                gsap.from(emailIcon, {
+                    scale: 0.7,
+                    y: -20,
+                    duration: 1,
+                    ease: "bounce.out"
+                });
+                gsap.from(emailLinks, {
+                    opacity: 0,
+                    x: 40,
+                    stagger: 0.15,
+                    duration: 1,
+                    delay: 0.3,
+                    ease: "power2.out"
+                });
+            }
+        })
+
+        // GSAP animation for each paragraph in story-timeline (scroll-triggered, no overflow-x)
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.gsap && window.ScrollTrigger) {
+                const paragraphs = document.querySelectorAll('#storyTimeline p');
+                gsap.set(paragraphs, { opacity: 0, x: 60, scale: 0.96 });
+
+                gsap.to(paragraphs, {
+                    opacity: 1,
+                    x: 0,
+                    scale: 1,
+                    stagger: {
+                        each: 0.35,
+                        from: "start"
+                    },
+                    duration: 1.1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: "#storyTimeline",
+                        start: "top 85%",
+                    }
+                });
+
+                // Floating effect for uniqueness
+                paragraphs.forEach((p, i) => {
+                    gsap.to(p, {
+                        y: "+=10",
+                        yoyo: true,
+                        repeat: -1,
+                        duration: 2.5 + i,
+                        ease: "sine.inOut",
+                        delay: 1 + i * 0.2
+                    });
+                });
+
+                // Animate story image on scroll (side-to-side and scale)
+                gsap.fromTo("#storyImage",
+                    { opacity: 0, x: -80, scale: 0.85, rotate: 8 },
+                    {
+                        opacity: 1,
+                        x: 0,
+                        scale: 1,
+                        rotate: 0,
+                        duration: 1.5,
+                        ease: "elastic.out(1, 0.7)",
+                        scrollTrigger: {
+                            trigger: "#storyImageContainer",
+                            start: "top 90%",
+                        }
+                    }
+                );
+                // Add continuous animation for image
+                gsap.to("#storyImage", {
+                    scale: 1.04,
+                    rotate: -2,
+                    yoyo: true,
+                    repeat: -1,
+                    duration: 2.5,
+                    ease: "sine.inOut",
+                    delay: 2
+                });
+            }
+        });
+
+        // GSAP animation for timeline section
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.gsap && window.ScrollTrigger) {
+                // Animate timeline title
+                gsap.from(".timeline-title", {
+                    opacity: 0,
+                    y: -40,
+                    scale: 0.9,
+                    duration: 1,
+                    ease: "elastic.out(1, 0.7)",
+                    scrollTrigger: {
+                        trigger: "#timelineSection",
+                        start: "top 90%",
+                    }
+                });
+
+                // Animate each timeline item
+                const items = document.querySelectorAll('#timeline .timeline-item');
+                gsap.set(items, { opacity: 0, x: 80, scale: 0.95 });
+
+                gsap.to(items, {
+                    opacity: 1,
+                    x: 0,
+                    scale: 1,
+                    stagger: {
+                        each: 0.5,
+                        from: "start"
+                    },
+                    duration: 1.2,
+                    ease: "elastic.out(1, 0.7)",
+                    scrollTrigger: {
+                        trigger: "#timelineSection",
+                        start: "top 85%",
+                    }
+                });
+
+                // Animate timeline markers with bounce and color
+                const markers = document.querySelectorAll('#timeline .timeline-marker');
+                gsap.fromTo(markers,
+                    { scale: 0.6, backgroundColor: "#D4AF37" },
+                    {
+                        scale: 1.2,
+                        backgroundColor: "#2193b0",
+                        yoyo: true,
+                        repeat: -1,
+                        duration: 1.2,
+                        stagger: 0.35,
+                        ease: "bounce.inOut"
+                    }
+                );
+
+                // Animate timeline years with rotation and floating
+                const years = document.querySelectorAll('#timeline .timeline-year');
+                years.forEach((year, i) => {
+                    gsap.fromTo(year,
+                        { rotate: -12, opacity: 0 },
+                        {
+                            rotate: 0,
+                            opacity: 1,
+                            duration: 1.2,
+                            ease: "elastic.out(1, 0.7)",
+                            scrollTrigger: {
+                                trigger: year,
+                                start: "top 95%",
+                            }
+                        }
+                    );
+                    gsap.to(year, {
+                        y: "+=8",
+                        yoyo: true,
+                        repeat: -1,
+                        duration: 2 + i,
+                        ease: "sine.inOut",
+                        delay: 1 + i * 0.2
+                    });
+                });
+
+                // Animate timeline content with fade and float
+                const contents = document.querySelectorAll('#timeline .timeline-content');
+                gsap.set(contents, { opacity: 0, y: 30 });
+                gsap.to(contents, {
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.5,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: "#timelineSection",
+                        start: "top 90%",
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
