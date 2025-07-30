@@ -1,0 +1,1007 @@
+<html lang="en" style="overflow-x:hidden;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DeFreitas Ventures Inc. - Where Vision Meets Enterprise</title>
+    <meta name="description"
+        content="DeFreitas Ventures Inc. - Shaping futures in agriculture, mining, construction, tourism, and beyond. 30+ years of multi-sector experience.">
+
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS and Libraries -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./images/favicon.png" type="image/png">
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "DeFreitas Ventures Inc.",
+      "description": "Multi-sector business specializing in agriculture, mining, construction, tourism, and business consulting",
+      "url": "https://defreitasventures.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/randy-defreitas-b37568345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+        "https://wa.me/1234567890",
+        "https://www.facebook.com/share/1CPjsgueZe/?mibextid=wwXIfr"
+      ]
+    }
+    </script>
+    <style>
+        html,
+        body {
+            overflow-x: hidden !important;
+            width: 100vw;
+            max-width: 100vw;
+        }
+
+        .nav-logo .logo-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 2rem;
+            color: #D4AF37;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+            display: inline-block;
+            margin-left: 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .nav-logo .logo-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1500;
+            /* Remove animation for static position */
+            animation: none !important;
+            pointer-events: auto;
+            transition: right 0.3s, bottom 0.3s;
+            transform: none !important;
+        }
+
+        @media (max-width: 600px) {
+            .whatsapp-float {
+                right: 1rem;
+                bottom: 1rem;
+            }
+        }
+
+        /* Responsive Gallery Section */
+        .gallery-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #fffbe6 0%, #f7f7f7 100%);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .gallery-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .gallery-section .section-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-swiper {
+            width: 100%;
+            padding-bottom: 3rem;
+            position: relative;
+        }
+
+        .swiper-wrapper {
+            align-items: stretch;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            transition: transform 0.5s cubic-bezier(.77, 0, .18, 1);
+        }
+
+        .gallery-item {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            position: relative;
+            width: 340px;
+            max-width: 90vw;
+            margin: 0 auto;
+            transition: box-shadow 0.3s;
+        }
+
+        .gallery-item:hover {
+            box-shadow: 0 16px 48px rgba(212, 175, 55, 0.18), 0 4px 16px rgba(0, 0, 0, 0.12);
+            transform: scale(1.03);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.7s cubic-bezier(.77, 0, .18, 1);
+            will-change: transform;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.07) rotate(-1deg);
+        }
+
+        .gallery-caption {
+            padding: 1.2rem 1rem 1rem 1rem;
+            background: rgba(255, 255, 255, 0.95);
+            position: relative;
+            z-index: 2;
+            text-align: left;
+            border-top: 1px solid #f3e7c3;
+        }
+
+        .gallery-caption h4 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.15rem;
+            color: #D4AF37;
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .gallery-caption p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.98rem;
+            color: #444;
+            margin: 0;
+        }
+
+        /* Swiper navigation buttons */
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #D4AF37;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            box-shadow: 0 2px 8px rgba(212, 175, 55, 0.12);
+            top: 50%;
+            transform: translateY(-50%);
+            transition: background 0.2s;
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: #D4AF37;
+            color: #fff;
+        }
+
+        .swiper-pagination-bullet {
+            background: #D4AF37;
+            opacity: 0.7;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #D4AF37;
+            opacity: 1;
+            box-shadow: 0 0 0 2px #fffbe6;
+        }
+
+        /* Parallax overlay effect */
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(120deg, rgba(212, 175, 55, 0.08) 0%, rgba(255, 255, 255, 0.0) 100%);
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.7;
+            transition: opacity 0.4s;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        /* Mobile styles */
+        @media (max-width: 600px) {
+            .gallery-section {
+                padding: 2rem 0 1.5rem 0;
+            }
+
+            .gallery-item {
+                width: 98vw;
+                max-width: 98vw;
+                border-radius: 12px;
+            }
+
+            .gallery-item img {
+                height: 160px;
+            }
+
+            .gallery-caption {
+                padding: 0.8rem 0.7rem 0.7rem 0.7rem;
+            }
+
+            .swiper-button-next,
+            .swiper-button-prev {
+                width: 36px;
+                height: 36px;
+            }
+        }
+
+        /* Circle menu styles */
+        .circle-menu-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 56px;
+            height: 56px;
+            background: #D4AF37;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            z-index: 1600;
+            transition: transform 0.3s;
+        }
+
+        .circle-menu-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .circle-menu-icon {
+            font-size: 1.5rem;
+            line-height: 0;
+        }
+
+        .circle-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 1500;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .circle-menu {
+            position: fixed;
+            bottom: 80px;
+            right: 16px;
+            width: 200px;
+            height: 200px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transform: scale(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            z-index: 1600;
+        }
+
+        .circle-menu.open {
+            transform: scale(1);
+        }
+
+        .circle-menu-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: #333;
+            text-decoration: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 50px;
+            margin: 0.4rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(212, 175, 55, 0.1);
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .circle-menu-link:hover {
+            background: #D4AF37;
+            color: #fff;
+        }
+
+        /* Header styles */
+        .header {
+            position: relative;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            transition: background 0.3s, padding 0.3s;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo {
+            height: 80px;
+            width: auto;
+            filter: drop-shadow(0 2px 8px #D4AF37);
+            border-radius: 16px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            transition: none;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: #333;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .nav-link.active,
+        .nav-link:hover {
+            background: #D4AF37;
+            color: #fff;
+        }
+
+        @media (max-width: 900px) {
+            .navbar {
+                padding: 0.8rem 1.5rem;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .nav-logo {
+                flex: 1;
+            }
+
+            .circle-menu-btn {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 48px;
+                height: 48px;
+            }
+
+            .circle-menu {
+                width: 180px;
+                height: 180px;
+            }
+
+            .circle-menu-link {
+                font-size: 0.9rem;
+                padding: 0.6rem 1rem;
+            }
+        }
+
+        /* Project Highlights styles */
+        .project-highlights-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-highlights-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 600px) {
+            .project-highlights-list {
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+            }
+
+            .gallery-item {
+                flex: 0 0 auto;
+                width: 300px;
+                max-width: 100%;
+                border-radius: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body style="overflow-x:hidden;">
+    <!-- Header -->
+    <header class="header" id="header" style="overflow-x:hidden;">
+        <nav class="navbar" style="height:80px">
+            <div class="nav-container">
+                <div class="nav-logo" data-aos="fade-right" data-aos-duration="1000"
+                    style="display:flex;align-items:center;gap:0.7rem;overflow-x:hidden;">
+                    <img src="./images/logo.png" alt="DeFreitas Ventures Inc." class="logo" id="mainLogo"
+                        style="height:80px;width:auto;filter:drop-shadow(0 2px 8px #D4AF37);border-radius:16px;">
+                    <span class="logo-title" id="mainTitleAnimated">DeFreitas Ventures.</span>
+                </div>
+                <ul class="nav-menu" id="mainNav" style="flex:1;justify-content:flex-end;">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./about/About-us.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./contact/contact.html" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <!-- Remove hamburger -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-video">
+            <video autoplay muted loop playsinline>
+                <source src="./images/hero-video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay" style="z-index:1;"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">
+                <span id="main-title"></span>
+                <span class="hero-subtitle" id="subtitle"></span>
+            </h1>
+            <p class="hero-description" data-aos="fade-up" data-aos-delay="600">
+                Shaping futures in agriculture, mining, construction, tourism, and beyond.
+            </p>
+            <style>
+                .hero-description {
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    text-align: center;
+                    background: linear-gradient(90deg, #FF6A00, #FFCC00);
+                    /* Orange → Gold */
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    color: transparent;
+                    animation: shine 3s ease-in-out infinite;
+                }
+
+                /* Optional shimmer animation */
+                @keyframes shine {
+                    0% {
+                        background-position: -200%;
+                    }
+
+                    50% {
+                        background-position: 200%;
+                    }
+
+                    100% {
+                        background-position: -200%;
+                    }
+                }
+                .hero-buttons {
+                position: relative; /* Makes z-index work */
+                z-index: 9999; /* Higher than anything else */
+                }   
+
+            </style>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="900">
+                <a href="#project-highlights" class="btn btn-primary" id="scrollToProjectBtn">Explore Our Projects</a>
+                <a href="./contact/contact.html" class="btn btn-secondary" id="scrollToContactBtn">Get In Touch</a>
+            </div>
+        </div>
+        <div class="scroll-indicator" data-aos="fade-in" data-aos-delay="1200">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Snapshot -->
+    <section class="about-snapshot" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image card-animated" data-aos="fade-right">
+                    <div class="card-image-container">
+                        <span class="card-floating-icon" aria-hidden="true">✨</span>
+                        <img src="./images/lighted-city-buildings-nighttime.jpg" alt="DeFreitas Ventures Leadership"
+                            loading="lazy" class="card-img-zoom card-img-pulse">
+                        <div class="card-image-overlay"></div>
+                        <div class="card-image-glow"></div>
+                        <div class="card-image-border"></div>
+                        <div class="orange-bubbles"></div>
+                    </div>
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <h2 class="section-title gsap-about-title">About DeFreitas Ventures</h2>
+                    <p class="about-text">
+                        Founded on family legacy, driven by innovation. At DeFreitas Ventures, our roots run deep — and
+                        our vision reaches further. With over years of multi-sector experience, we've built a reputation
+                        for excellence across diverse industries.
+                    </p>
+                    <a href="./about/about-us.html" class="btn btn-outline">More About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Ventures -->
+    <section class="ventures" id="ventures">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Our Ventures</h2>
+                <p class="section-subtitle">Diversified excellence across multiple industries</p>
+            </div>
+            <div class="ventures-grid">
+                <div class="venture-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon">
+                        <img src="./images/agriculture-icon.png" alt="Agriculture">
+                    </div>
+                    <h3 class="card-title">Farming & Agriculture</h3>
+                    <p class="card-description">Sustainable growth from ground to table.</p>
+                    <a href="#contact" class="card-link">Learn More</a>
+                </div>
+                <div class="venture-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <img src="./images/mining-icon.png" alt="Gold Mining">
+                    </div>
+                    <h3 class="card-title">Gold Mining</h3>
+                    <p class="card-description">Responsible extraction with environmental care.</p>
+                    <a href="#contact" class="card-link">Learn More</a>
+                </div>
+                <div class="venture-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-icon">
+                        <img src="./images/construction-icon.png" alt="Construction">
+                    </div>
+                    <h3 class="card-title">Construction & Infrastructure</h3>
+                    <p class="card-description">Building foundations for tomorrow's growth.</p>
+                    <a href="#contact" class="card-link">Learn More</a>
+                </div>
+                <div class="venture-card" data-aos="fade-up" data-aos-delay="400"
+                    style="overflow:visible; position:relative;">
+                    <div class="card-icon card-logo-animated">
+                        <img src="./img.jpg" alt="DeFreitas Ventures Inc. Logo" class="logo-original">
+                        <span class="logo-glow"></span>
+                    </div>
+                    <h3 class="card-title">Innovation Lab</h3>
+                    <p class="card-description">
+                        Where ideas ignite and the future is engineered.</p>
+                    <a href="https://www.facebook.com/share/1CPjsgueZe/?mibextid=wwXIfr" class="card-link"
+                        target="_blank">Learn More</a>
+                    <div class="card-special-effect"></div>
+                </div>
+                <div class="venture-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card-icon">
+                        <img src="./images/equipment-icon.png" alt="Equipment">
+                    </div>
+                    <h3 class="card-title">Equipment Procurement</h3>
+                    <p class="card-description">Quality machinery and tools for industry success.</p>
+                    <a href="#contact" class="card-link">Learn More</a>
+                </div>
+                <div class="venture-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card-icon">
+                        <img src="./images/consulting-icon.png" alt="Consulting">
+                    </div>
+                    <h3 class="card-title">Business Consulting</h3>
+                    <p class="card-description">Strategic guidance for sustainable growth.</p>
+                    <a href="#contact" class="card-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work With Us -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Why Work With Us</h2>
+                <p class="section-subtitle">Built on trust, driven by results</p>
+            </div>
+            <div class="trust-grid">
+                <div class="trust-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="trust-icon">🎢</div>
+                    <h3>30+ Years Experience</h3>
+                    <p>Proven track record across multiple industries with sustained growth and success.</p>
+                </div>
+                <div class="trust-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="trust-icon">🌿</div>
+                    <h3>Sustainability Focused</h3>
+                    <p>Environmental responsibility integrated into every project and business decision.</p>
+                </div>
+                <div class="trust-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="trust-icon">👥</div>
+                    <h3>Family & Community</h3>
+                    <p>Strong community ties and family values guide our business relationships.</p>
+                </div>
+                <div class="trust-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="trust-icon">📈</div>
+                    <h3>Proven Success</h3>
+                    <p>Consistent results and growth across diverse sectors and market conditions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery -->
+    <section class="gallery-section" id="project-highlights">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Project Highlights</h2>
+                <p class="section-subtitle">Showcasing our work across industries</p>
+            </div>
+            <div class="project-highlights-wrapper">
+                <div class="project-highlights-list">
+                    <div class="gallery-item" data-aos="zoom-in-up" data-aos-delay="100">
+                        <img src="./images/project1.png" alt="Sustainable Farming Initiative, 2023, Berbice Region"
+                            loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Sustainable Farming Initiative</h4>
+                            <p>2023 •</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in-up" data-aos-delay="200">
+                        <img src="./images/project2.png" alt="Gold Mining Operation, 2022, Interior Guyana"
+                            loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Gold Mining Operation</h4>
+                            <p>2022 •</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-aos="zoom-in-up" data-aos-delay="300">
+                        <img src="./images/project3.png" alt="Infrastructure Development, 2025, Georgetown"
+                            loading="lazy">
+                        <div class="gallery-caption">
+                            <h4>Infrastructure Development</h4>
+                            <p>2025 •</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact-cta super-cta-bg" id="contact">
+        <div class="container">
+            <div class="cta-content gsap-cta-content" data-aos="fade-up">
+                <div class="cta-title gsap-cta-title" style="font-size:clamp(1rem, 3vw, 2.5rem); margin-bottom:1rem;">
+                    Let's&nbsp;<span class="cta-space"></span>&nbsp;build&nbsp;<span
+                        class="cta-space"></span>&nbsp;something&nbsp;<span
+                        class="cta-space"></span>&nbsp;great&nbsp;<span
+                        class="cta-space"></span>&nbsp;<span>together.</span>
+                </div>
+                <p class="cta-description gsap-cta-desc" style="margin-bottom:2rem;">
+                    Ready to explore new opportunities? Get in touch with our team today.
+                </p>
+                <div class="cta-buttons" style="display:flex;gap:1rem;flex-wrap:wrap;">
+                    <button class="btn btn-primary gsap-cta-btn" onclick="openContactModal()">Start a
+                        Conversation</button>
+                    <a href="./contact/contact.html" class="btn btn-whatsapp gsap-cta-btn">WhatsApp Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="./images/logo.png" alt="DeFreitas Ventures Inc." class="footer-logo-img animated">
+                        <p class="footer-tagline">Where Vision Meets Enterprise</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#ventures">Ventures</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <!-- <p>📍 Worldwide</p> -->
+                    <p>📞 +877 382-6777</p>
+                    <p>✉️ support@dvcorp.org</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/randy-defreitas-b37568345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                            target="_blank">Linkdin</a>
+                        <a href="https://www.facebook.com/share/1CPjsgueZe/?mibextid=wwXIfr"
+                            target="_blank">Facebook</a>
+                        <a href="mailto:solar@dvcorp.org">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DeFreitas Ventures Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeContactModal()">&times;</span>
+            <h3>Get In Touch</h3>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    <!-- Add before the closing body tag -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        // Animate logo image and DeFreitas Ventures Inc. text in header
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.gsap) {
+                gsap.from("#mainLogo", {
+                    opacity: 0,
+                    scale: 0.7,
+                    rotate: -30,
+                    y: -30,
+                    duration: 1.2,
+                    ease: "elastic.out(1, 0.7)"
+                });
+                gsap.from("#mainTitleAnimated", {
+                    opacity: 0,
+                    x: 40,
+                    scale: 0.8,
+                    duration: 1.1,
+                    delay: 0.3,
+                    ease: "back.out(1.7)"
+                });
+                // Subtle floating effect for the text
+                gsap.to("#mainTitleAnimated", {
+                    y: "+=8",
+                    yoyo: true,
+                    repeat: -1,
+                    duration: 2.5,
+                    ease: "sine.inOut",
+                    delay: 1
+                });
+            }
+        });
+
+        // Ensure WhatsApp float is always visible and not affected by scroll/overflow
+        document.addEventListener('DOMContentLoaded', function () {
+            const float = document.getElementById('whatsappFloat');
+            if (float) {
+                float.style.position = 'fixed';
+                float.style.right = window.innerWidth <= 600 ? '1rem' : '2rem';
+                float.style.bottom = window.innerWidth <= 600 ? '1rem' : '2rem';
+                float.style.zIndex = 1500;
+                float.style.pointerEvents = 'auto';
+                float.style.animation = 'none';
+                float.style.transform = 'none';
+            }
+            window.addEventListener('resize', function () {
+                if (float) {
+                    float.style.right = window.innerWidth <= 600 ? '1rem' : '2rem';
+                    float.style.bottom = window.innerWidth <= 600 ? '1rem' : '2rem';
+                }
+            });
+        });
+
+        // Remove any transform/animation from nav-menu
+        document.addEventListener('DOMContentLoaded', function () {
+            const navMenu = document.querySelector('.nav-menu');
+            if (navMenu) {
+                navMenu.style.transform = 'none';
+                navMenu.style.left = '0';
+                navMenu.style.max
+            }
+        });
+
+        // GSAP animation for gallery slides
+        if (window.gsap && window.ScrollTrigger) {
+            gsap.utils.toArray('.gallery-slide-animate').forEach((slide, i) => {
+                gsap.fromTo(slide,
+                    { opacity: 0, y: 60, scale: 0.92 },
+                    {
+                        opacity: 1, y: 0, scale: 1,
+                        duration: 1,
+                        delay: parseFloat(slide.dataset.animateDelay) || 0,
+                        ease: "expo.out",
+                        scrollTrigger: {
+                            trigger: slide,
+                            start: "top 90%",
+                            toggleActions: "play none none reverse"
+                        }
+                    }
+                );
+            });
+        }
+
+        // Swiper gallery initialization with mobile, parallax, and animation
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.Swiper) {
+                new Swiper('.gallery-swiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 24,
+                    loop: true,
+                    centeredSlides: true,
+                    grabCursor: true,
+                    speed: 900,
+                    parallax: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    breakpoints: {
+                        600: {
+                            slidesPerView: 1.2,
+                            spaceBetween: 16,
+                        },
+                        900: {
+                            slidesPerView: 2,
+                            spaceBetween: 24,
+                        },
+                        1200: {
+                            slidesPerView: 3,
+                            spaceBetween: 32,
+                        }
+                    },
+                    on: {
+                        slideChangeTransitionStart: function () {
+                            document.querySelectorAll('.gallery-slide-animate').forEach(function (el) {
+                                el.classList.remove('active');
+                            });
+                        }
+                    }
+                });
+            }
+        });
+
+        // Circle menu logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('circleMenuBtn');
+            const menu = document.getElementById('circleMenu');
+            const overlay = document.getElementById('circleMenuOverlay');
+            let open = false;
+
+            function openMenu() {
+                menu.classList.add('open');
+                overlay.classList.add('active');
+                btn.classList.add('active');
+                document.body.classList.add('circle-menu-blur');
+                open = true;
+            }
+            function closeMenu() {
+                menu.classList.remove('open');
+                overlay.classList.remove('active');
+                btn.classList.remove('active');
+                document.body.classList.remove('circle-menu-blur');
+                open = false;
+            }
+            btn.addEventListener('click', function () {
+                if (!open) openMenu();
+                else closeMenu();
+            });
+            btn.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    if (!open) openMenu();
+                    else closeMenu();
+                }
+            });
+            overlay.addEventListener('click', closeMenu);
+            document.querySelectorAll('.circle-menu-link').forEach(link => {
+                link.addEventListener('click', function () {
+                    closeMenu();
+                    // Optionally highlight active link in main nav
+                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                    if (this.dataset.link === 'home') document.querySelector('.nav-link[href="#home"]').classList.add('active');
+                    if (this.dataset.link === 'about') document.querySelector('.nav-link[href="./about/About-us.html"]').classList.add('active');
+                    if (this.dataset.link === 'contact') document.querySelector('.nav-link[href="./contact/contact.html"]').classList.add('active');
+                });
+            });
+            document.addEventListener('click', function (e) {
+                if (open && !menu.contains(e.target) && !btn.contains(e.target) && !overlay.contains(e.target)) {
+                    closeMenu();
+                }
+            });
+        });
+
+        // Smooth scroll for "Explore Our Projects" button
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('scrollToProjectBtn');
+            if (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.getElementById('project');
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
