@@ -27,7 +27,7 @@
 .logo {
     height: 80px;
     width: auto;
-    filter: drop-shadow(0 2px 8px #D4AF37);
+    /* filter: drop-shadow(0 2px 8px #D4AF37); */
     border-radius: 16px;
     transition: var(--transition);
     /* Remove scale: 1.8; for better control */
@@ -78,7 +78,7 @@
     transition: all 0.5s ease;
     animation: footerLogoGlow 4s infinite;
     position: relative;
-    scale: 1.4;
+    scale: 2.6;
 }
 
 .footer-logo-img:hover {
