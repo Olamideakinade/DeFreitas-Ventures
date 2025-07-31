@@ -511,42 +511,67 @@
                 <span id="main-title"></span>
                 <span class="hero-subtitle" id="subtitle"></span>
             </h1>
-            <p class="hero-description" data-aos="fade-up" data-aos-delay="600">
+            <p class="hero-description"
+                data-glow-text="Shaping futures in agriculture, mining, construction, tourism, and beyond."
+                data-aos="fade-up" data-aos-delay="600">
                 Shaping futures in agriculture, mining, construction, tourism, and beyond.
             </p>
+
             <style>
                 .hero-description {
-                    font-size: 1.3rem;
-                    font-weight: 600;
+                    position: relative;
+                    font-size: 1.6rem;
+                    font-weight: 700;
                     text-align: center;
-                    background: linear-gradient(90deg, #FF6A00, #FFCC00);
-                    /* Orange → Gold */
+                    background: linear-gradient(90deg, #FF6A00, #FFD700, #FF6A00);
+                    /* Orange-Gold-Orange */
+                    background-size: 200% auto;
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     background-clip: text;
                     color: transparent;
-                    animation: shine 3s ease-in-out infinite;
+                    animation: rotateShine 5s linear infinite;
+                    z-index: 1;
                 }
 
-                /* Optional shimmer animation */
-                @keyframes shine {
-                    0% {
-                        background-position: -200%;
-                    }
+                /* Optional glow behind the text */
+                .hero-description::before {
+                    content: attr(data-glow-text);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    z-index: -1;
+                    filter: blur(18px);
+                    opacity: 0.6;
+                    background: conic-gradient(from 0deg, #FF6A00, #FFD700, #FF6A00);
+                    background-size: 200% 200%;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    /* animation: glowSpin 6s linear infinite; */
 
-                    50% {
-                        background-position: 200%;
+                }
+
+                @keyframes rotateShine {
+                    0% {
+                        background-position: 200% center;
                     }
 
                     100% {
-                        background-position: -200%;
+                        background-position: -200% center;
                     }
                 }
-                .hero-buttons {
-                position: relative; /* Makes z-index work */
-                z-index: 9999; /* Higher than anything else */
-                }   
 
+
+
+                .hero-buttons {
+                    position: relative;
+                    /* Makes z-index work */
+                    z-index: 9999;
+                    /* Higher than anything else */
+                }
             </style>
             <div class="hero-buttons" data-aos="fade-up" data-aos-delay="900">
                 <a href="#project-highlights" class="btn btn-primary" id="scrollToProjectBtn">Explore Our Projects</a>
@@ -765,7 +790,7 @@
                 <div class="footer-section">
                     <h4>Contact Info</h4>
                     <!-- <p>📍 Worldwide</p> -->
-                    <p>📞 +(877)DVCORP-7</p>
+                    <p>📞 +(877)382-6777</p>
                     <p>✉️ support@dvcorp.org</p>
                 </div>
                 <div class="footer-section">
