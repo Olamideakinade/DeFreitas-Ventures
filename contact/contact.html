@@ -1,0 +1,584 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - DeFreitas Ventures Inc.</title>
+    <meta name="description"
+        content="Connect with DeFreitas Ventures Inc. Submit inquiries, start a conversation, or explore opportunities. Multiple ways to reach us including WhatsApp, phone, and email.">
+    <link rel="canonical" href="https://defreitasventures.com/contact">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Animate.css for Textillate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "DeFreitas Ventures Inc.",
+        "url": "https://defreitasventures.com",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+877 382-6777",
+          "contactType": "customer service",
+          "availableLanguage": "English"
+        }
+      }
+    }
+    </script>
+
+    <style>
+        .hero-section {
+            height: 600px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-background {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+        .hero-content-animated {
+            position: relative;
+            z-index: 3;
+            margin-top: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-title-animated {
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2.6rem;
+            text-align: center;
+            margin-bottom: 0.3em;
+            text-shadow: 0 2px 12px #000;
+            letter-spacing: 0.01em;
+        }
+        .hero-subtitle-animated {
+            color: orange;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-top: 0.2em;
+            text-shadow: 0 1px 6px #000;
+            letter-spacing: 0.01em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="logo.PNG" class="lo" width="70" height="70">
+            </div>
+            <style>
+                .lo{
+                    width:160px;
+                    height: auto;
+                }
+                .header{
+                    height:100px;   
+                }
+                .nav-container{
+                    margin-top: -50px;
+                }
+            </style>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../about/about-us.html">About</a>
+                <!-- <a href="/services">Services</a> -->
+                <a href="./contact.html" class="active">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background" id="heroBg">
+            <!-- Animated Responsive Background Video -->
+            <video id="heroVideo" autoplay muted loop playsinline poster="hero-poster.jpg"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:1;filter:brightness(0.7) blur(2px);transition:filter 1s;">
+                <source src="hero-bg.mp4" type="video/mp4">
+                <source src="hero-bg.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Animated Gradient Overlay -->
+            <div id="heroGradient"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;pointer-events:none;"></div>
+        </div>
+        <div class="container hero-content-animated">
+            <h1  class="hero-title-animated tlt-hero">
+                Let's Build Something Great Together.
+            </h1>
+            <p  class="hero-subtitle-animated tlt-hero">
+                Connect with us to start a conversation, request a service, or explore opportunities.
+            </p>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+  // Run after page load
+  window.addEventListener('load', () => {
+    // Animate video background filter (fade in + unblur)
+    gsap.to("#heroVideo", {
+      duration: 2,
+      filter: "brightness(1) blur(0px)",
+      ease: "power2.out"
+    });
+
+    // Animate gradient overlay with pulsing glow effect
+    gsap.fromTo("#heroGradient", 
+      { 
+        background: "radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%)", 
+        opacity: 0 
+      },
+      { 
+        opacity: 1,
+        duration: 3,
+        ease: "power2.inOut",
+        onComplete: () => {
+          gsap.to("#heroGradient", {
+            backgroundPosition: "200% 0%",
+            backgroundImage: "linear-gradient(135deg, rgba(255,0,150,0.3), rgba(0,204,255,0.2))",
+            repeat: -1,
+            yoyo: true,
+            duration: 6,
+            ease: "sine.inOut"
+          });
+        }
+      }
+    );
+
+    // Animate hero text
+    gsap.from(".hero-title-animated", {
+      y: 50,
+      opacity: 0,
+      duration: 1.2,
+      delay: 0.5,
+      ease: "power3.out"
+    });
+
+    gsap.from(".hero-subtitle-animated", {
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      delay: 0.8,
+      ease: "power3.out"
+    });
+  });
+</script>
+
+ <style>
+                .hero-description {
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    text-align: center;
+                    background: linear-gradient(90deg, #FF6A00, #FFCC00);
+                    /* Orange → Gold */
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    color: transparent;
+                    animation: shine 3s ease-in-out infinite;
+                }
+
+                /* Optional shimmer animation */
+                @keyframes shine {
+                    0% {
+                        background-position: -200%;
+                    }
+
+                    50% {
+                        background-position: 200%;
+                    }
+
+                    100% {
+                        background-position: -200%;
+                    }
+                }
+            </style>
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-container" data-aos="fade-up" data-aos-delay="200">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm" class="contact-form" action="mailto:support@dvcorp.org" method="POST" enctype="text/plain" novalidate>
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required aria-describedby="name-error">
+                        <div class="error-message" id="name-error" role="alert"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required aria-describedby="email-error">
+                        <div class="error-message" id="email-error" role="alert"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" aria-describedby="phone-error">
+                        <div class="error-message" id="phone-error" role="alert"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject">
+                            <option value="General">General Inquiry</option>
+                            <option value="Services">Services</option>
+                            <option value="Consultation">Consultation</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required
+                            aria-describedby="message-error"></textarea>
+                        <div class="error-message" id="message-error" role="alert"></div>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-primary" id="submitBtn">
+                            <span class="btn-text">Send Message</span>
+                            <div class="loading-spinner" style="display: none;"></div>
+                        </button>
+                        <a href="https://wa.me/19179817712" target="_blank" class="btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Us Now
+                        </a>
+                    </div>
+
+                    <div class="success-message" id="successMessage" style="display: none;" role="alert">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Thank you! Your message has been sent successfully. We'll get back to you soon.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Ways to Connect -->
+    <section class="contact-methods-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Other Ways to Connect</h2>
+            <div class="contact-methods">
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p><a href="tel:+8773826777">+(877)3826777</a></p>
+                    <span class="contact-description">Mon-Fri, 9AM-6PM EST</span>
+                </div>
+
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-icon whatsapp">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>Instagram</h3>
+                    <p><a href="https://www.instagram.com/_302.m?igsh=MXdpaGxyNHZ6Y3ZtZg%3D%3D&utm_source=qr" target="_blank">Chat with us</a></p>
+                    <p><a href="https://www.instagram.com/landrovingadventure?igsh=MXUwNHF4dW12N3Jkdw%3D%3D&utm_source=qr" target="_blank">Here Also</a></p>
+                    <span class="contact-description">Instant messaging available</span>
+                </div>
+
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p><a href="mailto:support@dvcorp.org">Support@dvcorp.org</a></p>
+                    <span class="contact-description">We respond within 24 hours</span>
+                </div>
+
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p>Operating across World</p>
+                    <span class="contact-description">Multiple project locations</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mini Venture Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 data-aos="fade-up">Our Work in Action</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100" onclick="openLightbox(0)">
+                    <img src="./office-team.jpg" alt="DeFreitas Ventures team at work" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Our Team</h4>
+                            <p>Collaborating on strategic ventures</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200" onclick="openLightbox(1)">
+                    <img src="mining-site.png" alt="Mining operations in Suriname" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Mining Operations</h4>
+                            <p>Suriname Site - 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300" onclick="openLightbox(2)">
+                    <img src="office-building.png" alt="DeFreitas Ventures headquarters" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Headquarters</h4>
+                            <p>Strategic operations center</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="400" onclick="openLightbox(3)">
+                    <img src="./consultation-meeting.jpg" alt="Business consultation meeting" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-caption">
+                            <h4>Client Consultations</h4>
+                            <p>Building partnerships</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <img id="lightbox-image" src="" alt="">
+            <div class="lightbox-nav">
+                <button class="lightbox-prev" onclick="changeImage(-1)">&#10094;</button>
+                <button class="lightbox-next" onclick="changeImage(1)">&#10095;</button>
+            </div>
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float" id="whatsappFloat"
+        style="display:flex;align-items:center;justify-content:center;position:fixed;bottom:2rem;right:2rem;z-index:1500;">
+        <a href="https://wa.me/19179817712" target="_blank"
+            style="width:60px;text-decoration: none;height:60px;background:#11c885;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:2rem;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:all 0.3s;">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section animate-footer">
+                    <h3 class="animate-footer"
+                        style="color:#fff;font-family:'Playfair Display',serif;font-weight:700;letter-spacing:0.02em;">
+                        DeFreitas Ventures Inc.</h3>
+                    <p class="animate-footer" style="color:#eee;">Building strategic partnerships and creating value across
+                        diverse industries.</p>
+                    <div class="social-links animate-footer" style="margin-top:1.2rem;">
+                        <a href="https://www.instagram.com/landrovingadventure?igsh=MXUwNHF4dW12N3Jkdw%3D%3D&utm_source=qr" target="_blank" aria-label="WhatsApp"
+                            style="background:rgba(255,255,255,0.12);color:#fff;border:2px solid #25D366;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/19179817712" target="_blank" aria-label="WhatsApp"
+                        style="background:rgba(255,255,255,0.12);color:#fff;border:2px solid #bbaf06;">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                           <a href="https://www.instagram.com/_302.m?igsh=MXdpaGxyNHZ6Y3ZtZg%3D%3D&utm_source=qr" target="_blank" aria-label="WhatsApp"
+                            style="background:rgba(255,255,255,0.12);color:#fff;border:2px solid #ca25d3;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        
+                        <a href="https://www.facebook.com/share/1CPjsgueZe/?mibextid=wwXIfr" target="_blank"
+                            aria-label="Facebook"
+                            style="background:rgba(255,255,255,0.12);color:#fff;border:2px solid #2193b0;">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="mailto:Support@dvcorp.org" target="_blank" aria-label="Email"
+                            style="background:rgba(255,255,255,0.12);color:#fff;border:2px solid #D4AF37;">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section animate-footer">
+                    <h4 class="animate-footer">Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html" class="animate-footer">Home</a></li>
+                        <li><a href="../about/about-us.html" class="animate-footer">About</a></li>
+                        <li><a href="./contact.html" class="animate-footer">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section animate-footer">
+                    <h4 class="animate-footer">Contact Info</h4>
+                    <ul>
+                        <li class="animate-footer"><i class="fas fa-phone"></i> +(877)382-6777</li>
+                        </li>
+                        <li class="animate-footer"><i class="fas fa-envelope"></i> Support@dvcorp.org</li>
+                        <li class="animate-footer"><i class="fas fa-envelope"></i> Sales@dvcorp.org</li>
+                        <li class="animate-footer"><i class="fas fa-envelope"></i> Solar@dvcorp.org</li>
+                        <li class="animate-footer"><i class="fas fa-envelope"></i> ecoadventures@dvcorp.org</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section animate-footer">
+                    <h4 class="animate-footer">Newsletter</h4>
+                    <p class="animate-footer">Stay updated with our latest ventures and opportunities.</p>
+                    <form class="newsletter-form animate-footer">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom animate-footer">
+                <p class="animate-footer">&copy; 2025 DeFreitas Ventures Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="contact-form.js"></script>
+    <script src="gallery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // WhatsApp float animation
+        setTimeout(() => {
+            document.getElementById('whatsappFloat').classList.add('show');
+        }, 2000);
+
+        // Textillate animation for new hero section (subtle fade)
+        $(function () {
+            $('#heroMainTitle').textillate({
+                in: { effect: 'fadeIn', delay: 30, sync: true },
+                out: { effect: 'fadeOut', sync: true },
+                loop: true,
+                minDisplayTime: 1800
+            });
+            $('#heroMainSubtitle').textillate({
+                in: { effect: 'fadeInUp', delay: 20, sync: true },
+                out: { effect: 'fadeOut', sync: true },
+                loop: true,
+                minDisplayTime: 1800
+            });
+        });
+
+        // GSAP subtle animation for hero content
+        gsap.to(".hero-content-animated", {
+            opacity: 0.96,
+            y: 12,
+            yoyo: true,
+            repeat: -1,
+            duration: 3.5,
+            ease: "power1.inOut"
+        });
+
+        // GSAP continuous animation for hero background and content
+        gsap.to("#heroBg", {
+            scale: 1.09,
+            yoyo: true,
+            repeat: -1,
+            duration: 8,
+            ease: "power2.inOut"
+        });
+
+        gsap.to(".hero-content", {
+            y: 24,
+            yoyo: true,
+            repeat: -1,
+            duration: 2.8,
+            ease: "power1.inOut"
+        });
+
+        // Animate gradient overlay with GSAP for extra effect
+        gsap.to("#heroGradient", {
+            opacity: 0.9,
+            background: "linear-gradient(120deg, rgba(33,147,176,0.4) 0%, rgba(212,175,55,0.4) 100%)",
+            duration: 6,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+
+        // Animate video filter for cool effect
+        gsap.to("#heroVideo", {
+            filter: "brightness(0.8) blur(0px)",
+            duration: 4,
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut"
+        });
+
+        // Animate footer sections with GSAP
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.gsap && window.ScrollTrigger) {
+                gsap.registerPlugin(ScrollTrigger);
+                gsap.utils.toArray('.animate-footer').forEach((el, i) => {
+                    gsap.to(el, {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 0.8,
+                        delay: i * 0.08,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: el,
+                            start: "top 95%",
+                            toggleActions: "play none none reverse"
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
