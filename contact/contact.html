@@ -387,198 +387,215 @@
 
  
 </svg>
-<span class="ach-text">ACH</span>
-</a>
-
-<!-- Originals (images from Wikimedia Commons) -->
-<a class="ach-card" role="listitem" href="https://commons.wikimedia.org/wiki/File:American_Express_logo_(2018).svg" target="_blank" rel="noopener noreferrer" aria-label="American Express">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/960px-American_Express_logo_%282018%29.svg.png" alt="American Express logo" loading="lazy">
-</a>
-
-<a class="ach-card" role="listitem" href="https://commons.wikimedia.org/wiki/File:Visa_Logo.png" target="_blank" rel="noopener noreferrer" aria-label="Visa">
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa logo" loading="lazy">
-</a>
-
-<a class="ach-card" role="listitem" href="https://commons.wikimedia.org/wiki/File:Mastercard-logo.png" target="_blank" rel="noopener noreferrer" aria-label="Mastercard">
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard logo" loading="lazy">
-</a>
-
-<a class="ach-card" role="listitem" href="https://commons.wikimedia.org/wiki/File:Zelle_logo.svg" target="_blank" rel="noopener noreferrer" aria-label="Zelle">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Zelle_logo.svg/960px-Zelle_logo.svg.png" alt="Zelle logo" loading="lazy">
-</a>
-</div>
-</div>
-</div>
-</section>
-
-<style>
-:root{
---panel-h: 72px;
---card-h: 56px;
---gap: 14px;
---bg: #fff;
---shadow: 0 16px 38px rgba(12,18,30,0.06);
---px-per-second: 60;
---marq-min-duration: 16;
---radius: 36px;
-}
-
-/* Layout */
-.ach-transfer { width:100%; display:flex; justify-content:center; padding:18px 16px; box-sizing:border-box; font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial; }
-.ach-transfer__wrap { width:100%; max-width:980px; position:relative; padding:14px; background:transparent; }
-
-/* Arch background */
-.ach-transfer__wrap::before {
-content:"";
-position:absolute; left:0; right:0; top:0;
-height: calc(var(--panel-h) + 40px);
-background: linear-gradient(180deg, var(--bg), #fbfbfb);
-border-radius: calc(var(--radius) + 10px) calc(var(--radius) + 10px) 20px 20px;
-box-shadow: var(--shadow);
-transform: translateY(-10px);
-z-index:-1;
-}
-
-/* Title */
-.ach-transfer__title { font-weight:700; color:#222; margin:0 0 10px 14px; font-size:0.95rem; letter-spacing:-0.2px; display:inline-block; }
-
-/* Viewport */
-.ach-transfer__viewport { height:var(--panel-h); overflow:hidden; border-radius: calc(var(--radius) - 6px); margin-left:12px; box-sizing:border-box; display:inline-block; vertical-align:middle; min-width:360px; }
-
-/* Track & cards */
-.ach-transfer__track { display:flex; gap:var(--gap); align-items:center; padding:8px 12px; will-change:transform; }
-.ach-card { display:inline-flex; align-items:center; justify-content:center; height:var(--card-h); min-width:calc(var(--card-h) * 1.6); padding:6px 12px; border-radius:12px; background:linear-gradient(180deg,#fff,#fafafa); border:1px solid rgba(10,12,18,0.03); box-shadow:0 8px 20px rgba(10,14,20,0.04); text-decoration:none; transition:transform .36s cubic-bezier(.2,.9,.25,1),box-shadow .36s,filter .28s; flex:0 0 auto; }
-
-/* Images */
-.ach-card img { max-height:40px; display:block; pointer-events:none; }
-
-/* ACH inline logo styles (always shows) */
-.ach-logo { gap:10px; padding:8px 14px; }
-.ach-logo svg { width:56px; height:40px; color: #222; opacity: 0.9; }
-.ach-text { font-weight:800; font-size:1.05rem; margin-left:8px; color:#222; letter-spacing:0.8px; }
-
-/* small bob for img & ACH text */
-@keyframes ach-bob { 0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)} }
-.ach-card img, .ach-text { animation: ach-bob 4s ease-in-out infinite; }
-
-/* hover/focus micro interactions */
-.ach-card:hover, .ach-card:focus { transform: translateY(-8px) scale(1.03); box-shadow:0 18px 44px rgba(12,18,30,0.12); z-index:3; }
-.ach-card:focus { outline:3px solid rgba(59,130,246,0.14); outline-offset:2px; }
-
-/* marquee animation (track) - clones will make width >=2x so -50% works */
-.ach-transfer__track.marquee { animation: achMarq var(--marq-duration, 26s) linear infinite; }
-@keyframes achMarq { 0%{transform:translateX(0)}100%{transform:translateX(-50%)} }
-
-/* pause on hover/focus */
-.ach-transfer__viewport:hover .ach-transfer__track, .ach-transfer__viewport:focus-within .ach-transfer__track { animation-play-state: paused !important; }
-
-/* responsive */
-@media (max-width:820px) { .ach-transfer__title{display:none;} .ach-transfer__viewport{min-width:240px;} .ach-card{min-width:calc(var(--card-h) * 1.3); padding:6px 8px; border-radius:10px;} .ach-card img{max-height:34px;} .ach-logo svg{width:46px;height:32px;} .ach-text{font-size:0.95rem;} }
-@media (max-width:460px) { .ach-transfer__track.marquee{animation:none!important;transform:none;} .ach-transfer__viewport{overflow-x:auto; -webkit-overflow-scrolling:touch; scroll-snap-type:x mandatory;} .ach-card{scroll-snap-align:start;} }
-@media (prefers-reduced-motion: reduce) { .ach-card img, .ach-transfer__track { animation:none!important; transition:none!important; } .ach-transfer__track{animation:none!important;} }
-</style>
-
-<script>
-/* Robust marquee for ACH transfer bar */
-(function () {
-const viewport = document.getElementById('achViewport');
-const track = document.getElementById('achTrack');
-if (!viewport || !track) return;
-
-// Wait for images inside a container
-function waitForImages(container) {
-const imgs = Array.from(container.querySelectorAll('img'));
-if (imgs.length === 0) return Promise.resolve();
-return Promise.all(imgs.map(img => {
-if (img.complete) return Promise.resolve();
-return new Promise(res => { img.addEventListener('load', res); img.addEventListener('error', res); });
-}));
-}
-
-// store originals
-let originals = Array.from(track.children);
-let originalsCount = originals.length;
-track.dataset.originalCount = originalsCount;
-
-async function init() {
-await waitForImages(track);
-originals = Array.from(track.children).slice(0, originalsCount);
-track.dataset.originalCount = originalsCount;
-setupMarqueeIfNeeded();
-}
-
-function setupMarqueeIfNeeded() {
-// skip on small or reduced motion
-if (window.matchMedia('(max-width:460px)').matches) { track.classList.remove('marquee'); return; }
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { track.classList.remove('marquee'); return; }
-
-// remove clones
-while (track.children.length > originalsCount) track.removeChild(track.lastElementChild);
-
-const viewportW = viewport.getBoundingClientRect().width;
-let children = Array.from(track.children);
-let totalWidth = children.reduce((sum, el) => sum + el.getBoundingClientRect().width + parseFloat(getComputedStyle(el).marginRight || 0), 0);
-
-// clone originals until totalWidth >= 2 * viewportW
-let safety = 0;
-while (totalWidth < viewportW * 2 && safety < 60) {
-for (let i = 0; i < originals.length && totalWidth < viewportW * 2; i++) {
-const clone = originals[i].cloneNode(true);
-clone.setAttribute('aria-hidden', 'true');
-track.appendChild(clone);
-// update measurement
-totalWidth += clone.getBoundingClientRect().width + parseFloat(getComputedStyle(clone).marginRight || 0 || 0);
-}
-safety++;
-if (safety > 60) break;
-}
-
-if (totalWidth <= viewportW + 6) {
-track.classList.remove('marquee');
-return;
-}
-
-// compute duration using px-per-second
-const pxPerSecond = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--px-per-second')) || 60;
-const minDuration = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--marq-min-duration')) || 16;
-let duration = Math.max(minDuration, Math.round(totalWidth / pxPerSecond));
-track.style.setProperty('--marq-duration', duration + 's');
-
-requestAnimationFrame(() => track.classList.add('marquee'));
-}
-
-// init after images loaded
-init();
-
-// interactions: pause/resume
-viewport.addEventListener('pointerenter', () => track.classList.remove('marquee'), { passive: true });
-viewport.addEventListener('focusin', () => track.classList.remove('marquee'));
-viewport.addEventListener('pointerleave', () => setTimeout(setupMarqueeIfNeeded, 220), { passive: true });
-viewport.addEventListener('focusout', () => setTimeout(setupMarqueeIfNeeded, 220));
-
-// keyboard nudge
-viewport.addEventListener('keydown', (ev) => {
-if (ev.key === 'ArrowRight' || ev.key === 'ArrowLeft') {
-ev.preventDefault();
-const step = 120;
-viewport.scrollBy({ left: ev.key === 'ArrowRight' ? step : -step, behavior: 'smooth' });
-}
-});
-
-// rebuild on resize (debounced)
-let t = null;
-window.addEventListener('resize', () => {
-clearTimeout(t);
-t = setTimeout(() => {
-while (track.children.length > originalsCount) track.removeChild(track.lastElementChild);
-waitForImages(track).then(setupMarqueeIfNeeded);
-}, 240);
-});
-
-// dev log (remove in production)
-console.log('ACH Transfer: initialized — originals count =', originalsCount);
-})();
-</script>
+<!-- ===== ACH Transfer Bar — ACH + Amex / Visa / MasterCard / Zelle (robust marquee) ===== -->
+<section class="ach-transfer" aria-label="ACH transfer payment methods">
+    <div class="ach-transfer__wrap">
+      <div class="ach-transfer__title">We Accept Payment In:</div>
+  
+      <div class="ach-transfer__viewport" id="achViewport" tabindex="0" aria-roledescription="carousel">
+        <div class="ach-transfer__track" id="achTrack" role="list">
+          <!-- ACH: inline SVG / styled so it always renders (no external image) -->
+          <a class="ach-card ach-logo" role="listitem" href="#" aria-label="ACH bank transfer (info)">
+            <svg width="60" height="40" viewBox="0 0 60 40" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+              <rect rx="6" ry="6" width="60" height="40" fill="none"/>
+              <g transform="translate(4,4)" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="0" y="0" width="52" height="32" rx="6" ry="6" stroke-opacity="0.10" />
+                <path d="M6 10 H40" stroke-opacity="0.10"/>
+              </g>
+            </svg>
+            <span class="ach-text">ACH</span>
+          </a>
+  
+          <!-- Originals (images from Wikimedia Commons) -->
+          <a class="ach-card" role="listitem" href="https://commons.wikimedia.org/wiki/File:American_Express_logo_(2018).svg" target="_blank" rel="noopener noreferrer" aria-label="American Express">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/960px-American_Express_logo_%282018%29.svg.png" alt="American Express logo" loading="lazy">
+          </a>
+  
+          <a class="ach-card" role="listitem" href="https://commons.wikimedia.org/wiki/File:Visa_Logo.png" target="_blank" rel="noopener noreferrer" aria-label="Visa">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa logo" loading="lazy">
+          </a>
+  
+          <a class="ach-card" role="listitem" href="https://commons.wikimedia.org/wiki/File:Mastercard-logo.png" target="_blank" rel="noopener noreferrer" aria-label="Mastercard">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard logo" loading="lazy">
+          </a>
+  
+          <a class="ach-card" role="listitem" href="https://commons.wikimedia.org/wiki/File:Zelle_logo.svg" target="_blank" rel="noopener noreferrer" aria-label="Zelle">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Zelle_logo.svg/960px-Zelle_logo.svg.png" alt="Zelle logo" loading="lazy">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+  :root{
+    --panel-h: 72px;
+    --card-h: 56px;
+    --gap: 14px;
+    --bg: #fff;
+    --shadow: 0 16px 38px rgba(12,18,30,0.06);
+    --px-per-second: 60;
+    --marq-min-duration: 16;
+    --radius: 36px;
+  }
+  
+  /* Layout */
+  .ach-transfer { width:100%; display:flex; justify-content:center; padding:18px 16px; box-sizing:border-box; font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial; }
+  .ach-transfer__wrap { width:100%; max-width:980px; position:relative; padding:14px; background:transparent; }
+  
+  /* Arch background */
+  .ach-transfer__wrap::before {
+    content:"";
+    position:absolute; left:0; right:0; top:0;
+    height: calc(var(--panel-h) + 40px);
+    background: linear-gradient(180deg, var(--bg), #fbfbfb);
+    border-radius: calc(var(--radius) + 10px) calc(var(--radius) + 10px) 20px 20px;
+    box-shadow: var(--shadow);
+    transform: translateY(-10px);
+    z-index:-1;
+  }
+  
+  /* Title */
+  .ach-transfer__title { font-weight:700; color:#222; margin:0 0 10px 14px; font-size:0.95rem; letter-spacing:-0.2px; display:inline-block; }
+  
+  /* Viewport */
+  .ach-transfer__viewport { height:var(--panel-h); overflow:hidden; border-radius: calc(var(--radius) - 6px); margin-left:12px; box-sizing:border-box; display:inline-block; vertical-align:middle; min-width:360px; }
+  
+  /* Track & cards */
+  .ach-transfer__track { display:flex; gap:var(--gap); align-items:center; padding:8px 12px; will-change:transform; }
+  .ach-card { display:inline-flex; align-items:center; justify-content:center; height:var(--card-h); min-width:calc(var(--card-h) * 1.6); padding:6px 12px; border-radius:12px; background:linear-gradient(180deg,#fff,#fafafa); border:1px solid rgba(10,12,18,0.03); box-shadow:0 8px 20px rgba(10,14,20,0.04); text-decoration:none; transition:transform .36s cubic-bezier(.2,.9,.25,1),box-shadow .36s,filter .28s; flex:0 0 auto; }
+  
+  /* Images */
+  .ach-card img { max-height:40px; display:block; pointer-events:none; }
+  
+  /* ACH inline logo styles (always shows) */
+  .ach-logo { gap:10px; padding:8px 14px; }
+  .ach-logo svg { width:56px; height:40px; color: #222; opacity: 0.9; }
+  .ach-text { font-weight:800; font-size:1.05rem; margin-left:8px; color:#222; letter-spacing:0.8px; }
+  
+  /* small bob for img & ACH text */
+  @keyframes ach-bob { 0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)} }
+  .ach-card img, .ach-text { animation: ach-bob 4s ease-in-out infinite; }
+  
+  /* hover/focus micro interactions */
+  .ach-card:hover, .ach-card:focus { transform: translateY(-8px) scale(1.03); box-shadow:0 18px 44px rgba(12,18,30,0.12); z-index:3; }
+  .ach-card:focus { outline:3px solid rgba(59,130,246,0.14); outline-offset:2px; }
+  
+  /* marquee animation (track) - clones will make width >=2x so -50% works */
+  .ach-transfer__track.marquee { animation: achMarq var(--marq-duration, 26s) linear infinite; }
+  @keyframes achMarq { 0%{transform:translateX(0)}100%{transform:translateX(-50%)} }
+  
+  /* pause on hover/focus */
+  .ach-transfer__viewport:hover .ach-transfer__track, .ach-transfer__viewport:focus-within .ach-transfer__track { animation-play-state: paused !important; }
+  
+  /* responsive */
+  @media (max-width:820px) { .ach-transfer__title{display:none;} .ach-transfer__viewport{min-width:240px;} .ach-card{min-width:calc(var(--card-h) * 1.3); padding:6px 8px; border-radius:10px;} .ach-card img{max-height:34px;} .ach-logo svg{width:46px;height:32px;} .ach-text{font-size:0.95rem;} }
+  @media (max-width:460px) { .ach-transfer__track.marquee{animation:none!important;transform:none;} .ach-transfer__viewport{overflow-x:auto; -webkit-overflow-scrolling:touch; scroll-snap-type:x mandatory;} .ach-card{scroll-snap-align:start;} }
+  @media (prefers-reduced-motion: reduce) { .ach-card img, .ach-transfer__track { animation:none!important; transition:none!important; } .ach-transfer__track{animation:none!important;} }
+  </style>
+  
+  <script>
+  /* Robust marquee for ACH transfer bar */
+  (function () {
+    const viewport = document.getElementById('achViewport');
+    const track = document.getElementById('achTrack');
+    if (!viewport || !track) return;
+  
+    // Wait for images inside a container
+    function waitForImages(container) {
+      const imgs = Array.from(container.querySelectorAll('img'));
+      if (imgs.length === 0) return Promise.resolve();
+      return Promise.all(imgs.map(img => {
+        if (img.complete) return Promise.resolve();
+        return new Promise(res => { img.addEventListener('load', res); img.addEventListener('error', res); });
+      }));
+    }
+  
+    // store originals
+    let originals = Array.from(track.children);
+    let originalsCount = originals.length;
+    track.dataset.originalCount = originalsCount;
+  
+    async function init() {
+      await waitForImages(track);
+      originals = Array.from(track.children).slice(0, originalsCount);
+      track.dataset.originalCount = originalsCount;
+      setupMarqueeIfNeeded();
+    }
+  
+    function setupMarqueeIfNeeded() {
+      // skip on small or reduced motion
+      if (window.matchMedia('(max-width:460px)').matches) { track.classList.remove('marquee'); return; }
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { track.classList.remove('marquee'); return; }
+  
+      // remove clones
+      while (track.children.length > originalsCount) track.removeChild(track.lastElementChild);
+  
+      const viewportW = viewport.getBoundingClientRect().width;
+      let children = Array.from(track.children);
+      let totalWidth = children.reduce((sum, el) => sum + el.getBoundingClientRect().width + parseFloat(getComputedStyle(el).marginRight || 0), 0);
+  
+      // clone originals until totalWidth >= 2 * viewportW
+      let safety = 0;
+      while (totalWidth < viewportW * 2 && safety < 60) {
+        for (let i = 0; i < originals.length && totalWidth < viewportW * 2; i++) {
+          const clone = originals[i].cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          track.appendChild(clone);
+          // update measurement
+          totalWidth += clone.getBoundingClientRect().width + parseFloat(getComputedStyle(clone).marginRight || 0 || 0);
+        }
+        safety++;
+        if (safety > 60) break;
+      }
+  
+      if (totalWidth <= viewportW + 6) {
+        track.classList.remove('marquee');
+        return;
+      }
+  
+      // compute duration using px-per-second
+      const pxPerSecond = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--px-per-second')) || 60;
+      const minDuration = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--marq-min-duration')) || 16;
+      let duration = Math.max(minDuration, Math.round(totalWidth / pxPerSecond));
+      track.style.setProperty('--marq-duration', duration + 's');
+  
+      requestAnimationFrame(() => track.classList.add('marquee'));
+    }
+  
+    // init after images loaded
+    init();
+  
+    // interactions: pause/resume
+    viewport.addEventListener('pointerenter', () => track.classList.remove('marquee'), { passive: true });
+    viewport.addEventListener('focusin', () => track.classList.remove('marquee'));
+    viewport.addEventListener('pointerleave', () => setTimeout(setupMarqueeIfNeeded, 220), { passive: true });
+    viewport.addEventListener('focusout', () => setTimeout(setupMarqueeIfNeeded, 220));
+  
+    // keyboard nudge
+    viewport.addEventListener('keydown', (ev) => {
+      if (ev.key === 'ArrowRight' || ev.key === 'ArrowLeft') {
+        ev.preventDefault();
+        const step = 120;
+        viewport.scrollBy({ left: ev.key === 'ArrowRight' ? step : -step, behavior: 'smooth' });
+      }
+    });
+  
+    // rebuild on resize (debounced)
+    let t = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(t);
+      t = setTimeout(() => {
+        while (track.children.length > originalsCount) track.a(track.lastElementChild);
+        waitForImages(track).then(setupMarqueeIfNeeded);
+      }, 240);
+    });
+  
+    // dev log (remove in production)
+    console.log('ACH Transfer: initialized — originals count =', originalsCount);
+  })();
+  </script>
+  
 
 
 
