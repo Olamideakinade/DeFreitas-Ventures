@@ -832,37 +832,40 @@
             </div>
         </section>
 
-    <!-- ======= Compact Horizontal Payment Bar (Animated + Responsive, marquee + AMEX/Discover) ======= -->
-<section class="paybar" aria-label="Payment methods">
-    <div class="paybar-inner">
-      <h3 class="paybar-title">We accept</h3>
+    <!-- ===== ACH Transfer Bar — ACH + Amex / Visa / MasterCard / Zelle (robust marquee) ===== -->
+<section class="ach-transfer" aria-label="ACH transfer payment methods">
+    <div class="ach-transfer__wrap">
+      <div class="ach-transfer__title">We Accept Payment In:</div>
   
-      <div class="pay-carousel" id="payCarousel" tabindex="0" aria-roledescription="carousel" aria-label="Accepted payment methods">
-        <div class="pay-carousel-track" id="payTrack" role="list">
-          <!-- Each "card" is a small clickable logo with link to source -->
-          <a class="pay-card" href="https://commons.wikimedia.org/wiki/File:Visa_Logo.png" target="_blank" rel="noopener noreferrer" aria-label="Visa" role="listitem">
-            <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa">
+      <div class="ach-transfer__viewport" id="achViewport" tabindex="0" aria-roledescription="carousel">
+        <div class="ach-transfer__track" id="achTrack" role="list">
+          <!-- ACH: inline SVG / styled so it always renders (no external image) -->
+          <a class="ach-card ach-logo" role="listitem" href="#" aria-label="ACH bank transfer (info)">
+            <svg width="60" height="40" viewBox="0 0 60 40" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+              <rect rx="6" ry="6" width="60" height="40" fill="none"/>
+              <g transform="translate(4,4)" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="0" y="0" width="52" height="32" rx="6" ry="6" stroke-opacity="0.10" />
+                <path d="M6 10 H40" stroke-opacity="0.10"/>
+              </g>
+            </svg>
+            <span class="ach-text">ACH</span>
           </a>
   
-          <a class="pay-card" href="https://commons.wikimedia.org/wiki/File:Mastercard-logo.svg" target="_blank" rel="noopener noreferrer" aria-label="Mastercard" role="listitem">
-            <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/960px-Mastercard-logo.svg.png" alt="Mastercard">
+          <!-- Originals (images from Wikimedia Commons) -->
+          <a class="ach-card" role="listitem" href="https://commons.wikimedia.org/wiki/File:American_Express_logo_(2018).svg" target="_blank" rel="noopener noreferrer" aria-label="American Express">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/960px-American_Express_logo_%282018%29.svg.png" alt="American Express logo" loading="lazy">
           </a>
   
-  
-          <a class="pay-card" href="https://commons.wikimedia.org/wiki/File:PayPal_logo.svg" target="_blank" rel="noopener noreferrer" aria-label="PayPal" role="listitem">
-            <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/PayPal_logo.svg/527px-PayPal_logo.svg.png" alt="PayPal">
+          <a class="ach-card" role="listitem" href="https://commons.wikimedia.org/wiki/File:Visa_Logo.png" target="_blank" rel="noopener noreferrer" aria-label="Visa">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa logo" loading="lazy">
           </a>
   
-          <a class="pay-card" href="https://commons.wikimedia.org/wiki/File:Apple_Pay_logo.svg" target="_blank" rel="noopener noreferrer" aria-label="Apple Pay" role="listitem">
-            <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Apple_Pay_logo.svg/512px-Apple_Pay_logo.svg.png" alt="Apple Pay">
+          <a class="ach-card" role="listitem" href="https://commons.wikimedia.org/wiki/File:Mastercard-logo.png" target="_blank" rel="noopener noreferrer" aria-label="Mastercard">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard logo" loading="lazy">
           </a>
   
-          <a class="pay-card" href="https://commons.wikimedia.org/wiki/File:Amazon_Pay_logo.svg" target="_blank" rel="noopener noreferrer" aria-label="Amazon Pay" role="listitem">
-            <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Amazon_Pay_logo.svg/320px-Amazon_Pay_logo.svg.png" alt="Amazon Pay">
-          </a>
-  
-          <a class="pay-card" href="https://commons.wikimedia.org/wiki/File:BTC-Logo-2023.png" target="_blank" rel="noopener noreferrer" aria-label="Bitcoin" role="listitem">
-            <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/BTC-Logo-2023.png" alt="Bitcoin">
+          <a class="ach-card" role="listitem" href="https://commons.wikimedia.org/wiki/File:Zelle_logo.svg" target="_blank" rel="noopener noreferrer" aria-label="Zelle">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Zelle_logo.svg/960px-Zelle_logo.svg.png" alt="Zelle logo" loading="lazy">
           </a>
         </div>
       </div>
@@ -870,305 +873,174 @@
   </section>
   
   <style>
-  /* --- Layout & sizing --- */
-  .paybar {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 10px 16px;
-    background: linear-gradient(90deg, rgba(255,255,255,0.98), rgba(250,251,253,0.98));
-    box-shadow: 0 8px 22px rgba(15,20,30,0.04);
-    border-radius: 12px;
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  :root{
+    --panel-h: 72px;
+    --card-h: 56px;
+    --gap: 14px;
+    --bg: #fff;
+    --shadow: 0 16px 38px rgba(12,18,30,0.06);
+    --px-per-second: 60;
+    --marq-min-duration: 16;
+    --radius: 36px;
   }
   
-  .paybar-inner {
-    width: 100%;
-    max-width: 980px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
+  /* Layout */
+  .ach-transfer { width:100%; display:flex; justify-content:center; padding:18px 16px; box-sizing:border-box; font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial; }
+  .ach-transfer__wrap { width:100%; max-width:980px; position:relative; padding:14px; background:transparent; }
+  
+  /* Arch background */
+  .ach-transfer__wrap::before {
+    content:"";
+    position:absolute; left:0; right:0; top:0;
+    height: calc(var(--panel-h) + 40px);
+    background: linear-gradient(180deg, var(--bg), #fbfbfb);
+    border-radius: calc(var(--radius) + 10px) calc(var(--radius) + 10px) 20px 20px;
+    box-shadow: var(--shadow);
+    transform: translateY(-10px);
+    z-index:-1;
   }
   
-  /* title */
-  .paybar-title {
-    margin: 0;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #222;
-    opacity: 0;
-    transform: translateY(-6px);
-    transition: opacity .5s ease, transform .5s ease;
-    min-width: 78px;
-    text-align: left;
-  }
+  /* Title */
+  .ach-transfer__title { font-weight:700; color:#222; margin:0 0 10px 14px; font-size:0.95rem; letter-spacing:-0.2px; display:inline-block; }
   
-  /* carousel area (horizontal) */
-  .pay-carousel {
-    --card-h: 64px;            /* default card height */
-    display: block;
-    overflow: hidden;
-    flex: 1 1 auto;
-    position: relative;
-    padding: 6px;
-    will-change: transform;
-    outline: none;
-  }
+  /* Viewport */
+  .ach-transfer__viewport { height:var(--panel-h); overflow:hidden; border-radius: calc(var(--radius) - 6px); margin-left:12px; box-sizing:border-box; display:inline-block; vertical-align:middle; min-width:360px; }
   
-  /* track holds flex items and is animated */
-  .pay-carousel-track {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    transition: transform .3s linear;
-    will-change: transform;
-  }
+  /* Track & cards */
+  .ach-transfer__track { display:flex; gap:var(--gap); align-items:center; padding:8px 12px; will-change:transform; }
+  .ach-card { display:inline-flex; align-items:center; justify-content:center; height:var(--card-h); min-width:calc(var(--card-h) * 1.6); padding:6px 12px; border-radius:12px; background:linear-gradient(180deg,#fff,#fafafa); border:1px solid rgba(10,12,18,0.03); box-shadow:0 8px 20px rgba(10,14,20,0.04); text-decoration:none; transition:transform .36s cubic-bezier(.2,.9,.25,1),box-shadow .36s,filter .28s; flex:0 0 auto; }
   
-  /* individual small card */
-  .pay-card {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: auto;
-    height: var(--card-h);
-    min-width: calc(var(--card-h) * 1.6);
-    background: linear-gradient(180deg, #fff, #fbfcfd);
-    border-radius: 10px;
-    padding: 6px 10px;
-    box-shadow: 0 6px 18px rgba(12,18,28,0.06);
-    transition: transform .35s cubic-bezier(.2,.9,.25,1), box-shadow .35s, filter .25s;
-    text-decoration: none;
-    border: 1px solid rgba(10,12,18,0.03);
-    flex: 0 0 auto;
-    white-space: nowrap;
-  }
+  /* Images */
+  .ach-card img { max-height:40px; display:block; pointer-events:none; }
   
-  /* logo image */
-  .pay-card img {
-    max-height: 40px;
-    display: block;
-    pointer-events: none;
-    user-select: none;
-    filter: saturate(0.96) contrast(1.02);
-  }
+  /* ACH inline logo styles (always shows) */
+  .ach-logo { gap:10px; padding:8px 14px; }
+  .ach-logo svg { width:56px; height:40px; color: #222; opacity: 0.9; }
+  .ach-text { font-weight:800; font-size:1.05rem; margin-left:8px; color:#222; letter-spacing:0.8px; }
   
-  /* hover & focus effects (3D tilt + glow) */
-  .pay-card:hover,
-  .pay-card:focus {
-    transform: translateY(-6px) rotateX(3deg) scale(1.02);
-    box-shadow: 0 16px 36px rgba(16,24,40,0.12);
-    filter: drop-shadow(0 10px 30px rgba(12,18,30,0.08));
-    z-index: 3;
-  }
+  /* small bob for img & ACH text */
+  @keyframes ach-bob { 0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)} }
+  .ach-card img, .ach-text { animation: ach-bob 4s ease-in-out infinite; }
   
-  /* focus outline for keyboard users */
-  .pay-card:focus {
-    outline: 3px solid rgba(59,130,246,0.18);
-    outline-offset: 2px;
-  }
+  /* hover/focus micro interactions */
+  .ach-card:hover, .ach-card:focus { transform: translateY(-8px) scale(1.03); box-shadow:0 18px 44px rgba(12,18,30,0.12); z-index:3; }
+  .ach-card:focus { outline:3px solid rgba(59,130,246,0.14); outline-offset:2px; }
   
-  /* small visual separator to the left of the carousel */
-  .paybar-title + .pay-carousel { padding-left: 4px; }
+  /* marquee animation (track) - clones will make width >=2x so -50% works */
+  .ach-transfer__track.marquee { animation: achMarq var(--marq-duration, 26s) linear infinite; }
+  @keyframes achMarq { 0%{transform:translateX(0)}100%{transform:translateX(-50%)} }
   
-  /* subtle entrance animation when in-view */
-  .paybar.in-view .paybar-title {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  /* pause on hover/focus */
+  .ach-transfer__viewport:hover .ach-transfer__track, .ach-transfer__viewport:focus-within .ach-transfer__track { animation-play-state: paused !important; }
   
-  /* stagger reveal for cards */
-  .paybar.in-view .pay-card {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .pay-card { opacity: 0; transform: translateY(10px) scale(.995); }
-  
-  /* stagger delays (for up to 12 cards, repeat pattern if more) */
-  .paybar.in-view .pay-card:nth-child(1){ transition: all .45s cubic-bezier(.18,.9,.25,1) .06s; }
-  .paybar.in-view .pay-card:nth-child(2){ transition: all .45s cubic-bezier(.18,.9,.25,1) .12s; }
-  .paybar.in-view .pay-card:nth-child(3){ transition: all .45s cubic-bezier(.18,.9,.25,1) .18s; }
-  .paybar.in-view .pay-card:nth-child(4){ transition: all .45s cubic-bezier(.18,.9,.25,1) .24s; }
-  .paybar.in-view .pay-card:nth-child(5){ transition: all .45s cubic-bezier(.18,.9,.25,1) .30s; }
-  .paybar.in-view .pay-card:nth-child(6){ transition: all .45s cubic-bezier(.18,.9,.25,1) .36s; }
-  
-  /* marquee auto-scroll using CSS variable + JS control
-     This animates the track element; when the track has class "marquee"
-     it will translate from 0 -> -50% for a seamless loop (we clone children to reach >= 200% width) */
-  .pay-carousel-track.marquee { animation: marquee var(--marq-duration, 26s) linear infinite; }
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  
-  /* small pause when hovered/focused */
-  .pay-carousel:hover .pay-carousel-track,
-  .pay-carousel:focus-within .pay-carousel-track { animation-play-state: paused !important; }
-  
-  /* responsive adjustments */
-  @media (max-width: 820px) {
-    .paybar { padding: 10px; border-radius: 10px; }
-    .paybar-inner { gap: 10px; }
-    .paybar-title { display: none; } /* hide title on small screens to save space */
-    .pay-carousel-track { gap: 8px; }
-    .pay-card { min-width: calc(var(--card-h) * 1.4); padding: 6px 8px; border-radius: 8px; }
-    .pay-card img { max-height: 34px; }
-  }
-  
-  /* very small screens: allow horizontal swipe with nice snapping */
-  @media (max-width: 460px) {
-    .pay-carousel {
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      padding: 6px 4px;
-    }
-    .pay-carousel-track { animation: none !important; transform: none !important; }
-    .pay-card { scroll-snap-align: start; }
-  }
-  
-  /* Respect user motion preferences */
-  @media (prefers-reduced-motion: reduce) {
-    .pay-carousel-track { animation: none !important; transition: none !important; transform: none !important; }
-    .pay-card { transition: none !important; }
-  }
+  /* responsive */
+  @media (max-width:820px) { .ach-transfer__title{display:none;} .ach-transfer__viewport{min-width:240px;} .ach-card{min-width:calc(var(--card-h) * 1.3); padding:6px 8px; border-radius:10px;} .ach-card img{max-height:34px;} .ach-logo svg{width:46px;height:32px;} .ach-text{font-size:0.95rem;} }
+  @media (max-width:460px) { .ach-transfer__track.marquee{animation:none!important;transform:none;} .ach-transfer__viewport{overflow-x:auto; -webkit-overflow-scrolling:touch; scroll-snap-type:x mandatory;} .ach-card{scroll-snap-align:start;} }
+  @media (prefers-reduced-motion: reduce) { .ach-card img, .ach-transfer__track { animation:none!important; transition:none!important; } .ach-transfer__track{animation:none!important;} }
   </style>
   
   <script>
-  /* ====== Behavior: in-view trigger + marquee cloning + keyboard accessibility ====== */
+  /* Robust marquee for ACH transfer bar */
   (function () {
-    const section = document.querySelector('.paybar');
-    const carousel = document.getElementById('payCarousel');
-    const track = document.getElementById('payTrack');
+    const viewport = document.getElementById('achViewport');
+    const track = document.getElementById('achTrack');
+    if (!viewport || !track) return;
   
-    if (!section || !carousel || !track) return;
-  
-    // Helper: wait for images inside an element to be loaded
-    function waitForImages(el) {
-      const imgs = Array.from(el.querySelectorAll('img'));
+    // Wait for images inside a container
+    function waitForImages(container) {
+      const imgs = Array.from(container.querySelectorAll('img'));
+      if (imgs.length === 0) return Promise.resolve();
       return Promise.all(imgs.map(img => {
         if (img.complete) return Promise.resolve();
-        return new Promise(res => {
-          img.addEventListener('load', res);
-          img.addEventListener('error', res);
-        });
+        return new Promise(res => { img.addEventListener('load', res); img.addEventListener('error', res); });
       }));
     }
   
-    // Intersection Observer -> reveal entrance animations once in view
-    const io = new IntersectionObserver((entries, obs) => {
-      entries.forEach(async e => {
-        if (e.isIntersecting) {
-          section.classList.add('in-view');
-          await waitForImages(track);
-          setupMarquee();
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.18 });
+    // store originals
+    let originals = Array.from(track.children);
+    let originalsCount = originals.length;
+    track.dataset.originalCount = originalsCount;
   
-    io.observe(section);
+    async function init() {
+      await waitForImages(track);
+      originals = Array.from(track.children).slice(0, originalsCount);
+      track.dataset.originalCount = originalsCount;
+      setupMarqueeIfNeeded();
+    }
   
-    // MARQUEE: clone items until track width >= 2x viewport width for seamless -50% animation
-    function setupMarquee() {
-      // Don't run on tiny screens or reduced-motion preferences
-      if (window.matchMedia('(max-width: 460px)').matches) return;
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    function setupMarqueeIfNeeded() {
+      // skip on small or reduced motion
+      if (window.matchMedia('(max-width:460px)').matches) { track.classList.remove('marquee'); return; }
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { track.classList.remove('marquee'); return; }
   
-      // Clear prior clones (keep originals only)
-      const originalCount = track.querySelectorAll('.pay-card').length;
-      // If track has clones already, we try to detect and keep only the first set (originals)
-      // We'll assume the originals are the first originalCount elements (if previously cloned we reset).
-      // To make this robust, when first loaded we consider the current initial children original.
-      // We'll capture originals on first invocation
-      if (!track.dataset.originalCount) {
-        track.dataset.originalCount = originalCount;
-      }
-      const originalsCount = parseInt(track.dataset.originalCount, 10);
-      // If there are clones, strip back to originals
-      while (track.children.length > originalsCount) {
-        track.removeChild(track.lastChild);
-      }
+      // remove clones
+      while (track.children.length > originalsCount) track.removeChild(track.lastElementChild);
   
-      // Measure widths
-      const viewportWidth = carousel.getBoundingClientRect().width;
+      const viewportW = viewport.getBoundingClientRect().width;
       let children = Array.from(track.children);
       let totalWidth = children.reduce((sum, el) => sum + el.getBoundingClientRect().width + parseFloat(getComputedStyle(el).marginRight || 0), 0);
   
-      // Clone original set until totalWidth >= 2 * viewportWidth
-      let clones = 0;
-      const originals = children.slice(0, originalsCount);
-      while (totalWidth < viewportWidth * 2) {
-        for (let i = 0; i < originals.length && totalWidth < viewportWidth * 2; i++) {
+      // clone originals until totalWidth >= 2 * viewportW
+      let safety = 0;
+      while (totalWidth < viewportW * 2 && safety < 60) {
+        for (let i = 0; i < originals.length && totalWidth < viewportW * 2; i++) {
           const clone = originals[i].cloneNode(true);
-          clone.setAttribute('aria-hidden', 'true'); // avoid repeating for screen readers
+          clone.setAttribute('aria-hidden', 'true');
           track.appendChild(clone);
-          // update measurement by accessing bounding rect (expensive but necessary once)
-          totalWidth += clone.getBoundingClientRect().width + parseFloat(getComputedStyle(clone).marginRight || 0);
-          clones++;
-          if (clones > 40) break; // safety
+          // update measurement
+          totalWidth += clone.getBoundingClientRect().width + parseFloat(getComputedStyle(clone).marginRight || 0 || 0);
         }
-        if (clones > 40) break;
+        safety++;
+        if (safety > 60) break;
       }
   
-      // If content doesn't overflow, no marquee
-      if (totalWidth <= viewportWidth + 6) {
+      if (totalWidth <= viewportW + 6) {
         track.classList.remove('marquee');
         return;
       }
   
-      // Duration calculation: make it slow and proportional to content width
-      // Adjust divisor to control speed (higher => faster)
-      const pxPerSecond = 60; // visually comfortable slow speed
-      const durationSeconds = Math.max(14, Math.round(totalWidth / pxPerSecond));
-      track.style.setProperty('--marq-duration', durationSeconds + 's');
+      // compute duration using px-per-second
+      const pxPerSecond = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--px-per-second')) || 60;
+      const minDuration = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--marq-min-duration')) || 16;
+      let duration = Math.max(minDuration, Math.round(totalWidth / pxPerSecond));
+      track.style.setProperty('--marq-duration', duration + 's');
   
-      // Start marquee
-      // ensure reflow then add class
-      requestAnimationFrame(() => {
-        track.classList.add('marquee');
-      });
+      requestAnimationFrame(() => track.classList.add('marquee'));
     }
   
-    // Keyboard: arrow left/right nudge when carousel is focused
-    carousel.addEventListener('keydown', (ev) => {
+    // init after images loaded
+    init();
+  
+    // interactions: pause/resume
+    viewport.addEventListener('pointerenter', () => track.classList.remove('marquee'), { passive: true });
+    viewport.addEventListener('focusin', () => track.classList.remove('marquee'));
+    viewport.addEventListener('pointerleave', () => setTimeout(setupMarqueeIfNeeded, 220), { passive: true });
+    viewport.addEventListener('focusout', () => setTimeout(setupMarqueeIfNeeded, 220));
+  
+    // keyboard nudge
+    viewport.addEventListener('keydown', (ev) => {
       if (ev.key === 'ArrowRight' || ev.key === 'ArrowLeft') {
         ev.preventDefault();
-        const amount = 120;
-        carousel.scrollBy({ left: ev.key === 'ArrowRight' ? amount : -amount, behavior: 'smooth' });
+        const step = 120;
+        viewport.scrollBy({ left: ev.key === 'ArrowRight' ? step : -step, behavior: 'smooth' });
       }
     });
   
-    // Pause marquee when user interacts (mouse/touch/focus) and resume on leave
-    ['pointerenter', 'focusin', 'touchstart'].forEach(evt => {
-      carousel.addEventListener(evt, () => {
-        track.classList.remove('marquee');
-      }, { passive: true });
-    });
-    ['pointerleave', 'focusout'].forEach(evt => {
-      carousel.addEventListener(evt, () => {
-        // small delay then attempt to restore marquee
-        setTimeout(() => {
-          setupMarquee();
-        }, 220);
-      }, { passive: true });
+    // rebuild on resize (debounced)
+    let t = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(t);
+      t = setTimeout(() => {
+        while (track.children.length > originalsCount) track.a(track.lastElementChild);
+        waitForImages(track).then(setupMarqueeIfNeeded);
+      }, 240);
     });
   
-    // Recompute on resize/orientation change
-    let resizeTimer = null;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        // remove clones and re-build
-        const originalsCount = parseInt(track.dataset.originalCount || track.children.length, 10);
-        const originals = Array.from(track.children).slice(0, originalsCount);
-        track.innerHTML = '';
-        originals.forEach(n => track.appendChild(n));
-        waitForImages(track).then(setupMarquee);
-      }, 180);
-    });
+    // dev log (remove in production)
+    console.log('ACH Transfer: initialized — originals count =', originalsCount);
   })();
   </script>
-  <!-- ======= end paybar ======= -->
+  
   
         
         <section class="contact-cta super-cta-bg" id="contact">
