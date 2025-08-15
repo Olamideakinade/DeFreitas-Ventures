@@ -25,6 +25,49 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Improve mobile menu behavior
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar');
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    let lastScroll = 0;
+
+    // Hide navbar on scroll down, show on scroll up
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 0) {
+            navbar.classList.remove('scroll-up');
+            return;
+        }
+        
+        if (currentScroll > lastScroll && !navbar.classList.contains('scroll-down')) {
+            navbar.classList.remove('scroll-up');
+            navbar.classList.add('scroll-down');
+        } else if (currentScroll < lastScroll && navbar.classList.contains('scroll-down')) {
+            navbar.classList.remove('scroll-down');
+            navbar.classList.add('scroll-up');
+        }
+        lastScroll = currentScroll;
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navMenu.classList.contains('active') && 
+            !navMenu.contains(e.target) && 
+            !navToggle.contains(e.target)) {
+            navMenu.classList.remove('active');
+        }
+    });
+
+    // Close mobile menu when window is resized to desktop size
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            navMenu.classList.remove('active');
+        }
+    });
+});
+
 // GSAP Animations
 gsap.registerPlugin(ScrollTrigger);
 
