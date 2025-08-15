@@ -46,6 +46,77 @@
     </script>
 
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Update gallery grid for better mobile responsiveness */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Update ACH transfer section */
+        .ach-transfer {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        /* Make contact methods more responsive */
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Adjust footer for mobile */
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title-animated {
+                font-size: 2rem;
+                padding: 0 15px;
+            }
+
+            .hero-subtitle-animated {
+                font-size: 1rem;
+                padding: 0 15px;
+            }
+
+            .contact-form-section {
+                padding: 20px;
+            }
+
+            .form-container {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
         .hero-section {
             height: 600px;
             position: relative;
@@ -88,7 +159,7 @@
     </style>
 </head>
 
-<body>
+<body style="overflow-x: hidden;">
     <!-- Header -->
     <header class="header">
         <nav class="nav-container">
