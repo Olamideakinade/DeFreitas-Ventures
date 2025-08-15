@@ -1,8 +1,8 @@
-<html lang="en">
+<html lang="en" style="overflow-x: hidden;">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - DeFreitas Ventures Inc.</title>
     <meta name="description"
         content="Learn about DeFreitas Ventures Inc. - a multi-industry family enterprise built on legacy and driven by innovation, creating sustainable value across sectors.">
@@ -49,25 +49,6 @@
         ]
     }
     </script>
-    <style>
-        .scroll-down {
-            transform: translateY(-100%);
-            transition: transform 0.3s ease-an-out;
-        }
-
-        .scroll-up {
-            transform: translateY(0);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu.active {
-                max-height: calc(100vh - 70px);
-                overflow-y: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-        }
-    </style>
 </head>
 
 <body style="overflow-x: hidden;">
@@ -114,16 +95,16 @@
         </div>
     </section>
     <style>
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
         .hero-subtitle {
             font-size: 1.3rem;
             font-weight: 600;
             text-align: center;
-            background: linear-gradient(90deg, #FF6A00, #FFCC00);
-            /* Orange → Gold */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
             animation: shine 3s ease-in-out infinite;
             /* text-shadow: 2px 3px 10px black; */
         }
