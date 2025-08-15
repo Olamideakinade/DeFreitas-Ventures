@@ -1024,7 +1024,7 @@
           .reduce((sum, el) => sum + el.offsetWidth + 14, 0);
       }
       const pxPerSec = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--px-per-second'));
-      const minDuration = parseFloaat(getComputedStyle(document.documentElement).getPropertyValue('--marq-min-duration'));
+      const minDuration = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--marq-min-duration'));
       const duration = Math.max(minDuration, Math.round(totalWidth / pxPerSec));
       track.style.setProperty('--marq-duration', duration + 's');
       track.classList.add('marquee');
